@@ -1,0 +1,232 @@
+[
+    {
+        "id_menu" : "AYG0000001",
+        "name" : "Ayam Goreng Kremes",
+        "price" : 17000,
+        "discount" : 0,
+        "category" : "ayam",
+        "is_available" : true,
+        "is_popular" : true,
+        "image" : "../assets/product/food/ayam_goreng.jpg"
+    },
+    {
+        "id_menu" : "AYB0000002",
+        "name" : "Ayam Bakar Madu",
+        "price" : 18000,
+        "discount" : 0,
+        "category" : "ayam",
+        "is_available" : true,
+        "is_popular" : false,
+        "image" : "../assets/product/food/ayam_bakar.jpg"
+    },
+    {
+        "id_menu" : "AYP0000003",
+        "name" : "Ayam Panggang Kecap",
+        "price" : 19000,
+        "discount" : 0,
+        "category" : "ayam",
+        "is_available" : true,
+        "is_popular" : false,
+        "image" : "../assets/product/food/ayam_panggang.jpg"
+    },
+    {
+        "id_menu" : "GUL0000004",
+        "name" : "Gulai Ayam Bumbu Merah",
+        "price" : 30000,
+        "discount" : 20,
+        "category" : "ayam",
+        "is_available" : true,
+        "is_popular" : false,
+        "image" : "../assets/product/food/gulai.jpg"
+    },
+    {
+        "id_menu" : "BKG0000001",
+        "name" : "Bebek Goreng Kremes",
+        "price" : 25000,
+        "discount" : 0,
+        "category" : "bebek",
+        "is_available" : true,
+        "is_popular" : false,
+        "image" : "../assets/product/food/bebek_goreng.jpg"
+    },
+    {
+        "id_menu" : "BKB0000002",
+        "name" : "Bebek Bakar Kecap",
+        "price" : 27000,
+        "discount" : 0,
+        "category" : "bebek",
+        "is_available" : true,
+        "is_popular" : false,
+        "image" : "../assets/product/food/bebek_bakar.jpg"
+    },
+    {
+        "id_menu" : "BKP0000003",
+        "name" : "Bebek Panggang Kecap",
+        "price" : 28000,
+        "discount" : 0,
+        "category" : "bebek",
+        "is_available" : true,
+        "is_popular" : false,
+        "image" : "../assets/product/food/bebek_panggang.jpg"
+    },
+    {
+        "id_menu" : "RDG0000001",
+        "name" : "Rendang Khas Minang",
+        "price" : 35000,
+        "discount" : 20,
+        "category" : "sapi",
+        "is_available" : true,
+        "is_popular" : false,
+        "image" : "../assets/product/food/rendang.jpg"
+    },
+    {
+        "id_menu" : "RWN0000002",
+        "name" : "Rawon Khas Surabaya",
+        "price" : 40000,
+        "discount" : 20,
+        "category" : "sapi",
+        "is_available" : true,
+        "is_popular" : false,
+        "image" : "../assets/product/food/rawon.jpg"
+    },
+    {
+        "id_menu" : "STK0000003",
+        "name" : "Steak Sirloin Lada Hitam",
+        "price" : 45000,
+        "discount" : 20,
+        "category" : "sapi",
+        "is_available" : true,
+        "is_popular" : false,
+        "image" : "../assets/product/food/steak.jpg"
+    },
+    {
+        "id_menu" : "NSG0000001",
+        "name" : "Nasi Goreng Daging Sapi",
+        "price" : 24000,
+        "discount" : 0,
+        "category" : "chinese",
+        "is_available" : true,
+        "is_popular" : true,
+        "image" : "../assets/product/food/nasi_goreng.jpg"
+    },
+    {
+        "id_menu" : "KWT0000002",
+        "name" : "Kwetiau Goreng Telur Orak-Arik",
+        "price" : 25000,
+        "discount" : 20,
+        "category" : "chinese",
+        "is_available" : true,
+        "is_popular" : true,
+        "image" : "../assets/product/food/kwetiau.jpg"
+    },
+    {
+        "id_menu" : "FYH0000003",
+        "name" : "Fu Yung Hai Saus Tomat",
+        "price" : 23000,
+        "discount" : 0,
+        "category" : "chinese",
+        "is_available" : true,
+        "is_popular" : false,
+        "image" : "../assets/product/food/fuyunghai.jpg"
+    },
+    {
+        "id_menu" : "CPY0000004",
+        "name" : "Capcay Saus Tiram",
+        "price" : 22000,
+        "discount" : 0,
+        "category" : "chinese",
+        "is_available" : true,
+        "is_popular" : false,
+        "image" : "../assets/product/food/capcay.jpg"
+    },
+    {
+        "id_menu" : "KPT0000001",
+        "name" : "Kepiting Saus Tiram",
+        "price" : 45000,
+        "discount" : 0,
+        "category" : "seafood",
+        "is_available" : true,
+        "is_popular" : false,
+        "image" : "../assets/product/food/kepiting.jpg"
+    },
+    {
+        "id_menu" : "GRM0000002",
+        "name" : "Gurame Bakar Madu",
+        "price" : 40000,
+        "discount" : 0,
+        "category" : "seafood",
+        "is_available" : true,
+        "is_popular" : false,
+        "image" : "../assets/product/food/gurame.jpg"
+    },
+    {
+        "id_menu" : "CMT0000003",
+        "name" : "Cumi Tepung Lada Hitam",
+        "price" : 38000,
+        "discount" : 0,
+        "category" : "seafood",
+        "is_available" : true,
+        "is_popular" : false,
+        "image" : "../assets/product/food/cumi.jpg"
+    },
+    {
+        "id_menu" : "NSP0000001",
+        "name" : "Nasi Putih",
+        "price" : 6000,
+        "discount" : 0,
+        "category" : "nasi",
+        "is_available" : true,
+        "is_popular" : false,
+        "image" : "../assets/product/food/nasi_putih.jpg"
+    },
+    {
+        "id_menu" : "NSU0000002",
+        "name" : "Nasi Uduk",
+        "price" : 8000,
+        "discount" : 0,
+        "category" : "nasi",
+        "is_available" : true,
+        "is_popular" : false,
+        "image" : "../assets/product/food/nasi_uduk.jpg"
+    },
+    {
+        "id_menu" : "NSL0000003",
+        "name" : "Nasi Lontong",
+        "price" : 5000,
+        "discount" : 0,
+        "category" : "nasi",
+        "is_available" : true,
+        "is_popular" : false,
+        "image" : "../assets/product/food/nasi_lontong.jpg"
+    },
+    {
+        "id_menu" : "ALP0000001",
+        "name" : "Jus Alpukat",
+        "price" : 15000,
+        "discount" : 0,
+        "category" : "jus",
+        "is_available" : true,
+        "is_popular" : false,
+        "image" : "../assets/product/drink/alpukat.jpg"
+    },
+    {
+        "id_menu" : "STR0000002",
+        "name" : "Jus Stroberi",
+        "price" : 20000,
+        "discount" : 0,
+        "category" : "jus",
+        "is_available" : true,
+        "is_popular" : false,
+        "image" : "../assets/product/drink/stroberi.jpg"
+    },
+    {
+        "id_menu" : "AGR0000003",
+        "name" : "Jus Anggur",
+        "price" : 22000,
+        "discount" : 0,
+        "category" : "jus",
+        "is_available" : true,
+        "is_popular" : false,
+        "image" : "../assets/product/drink/anggur.jpg"
+    }
+]

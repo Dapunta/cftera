@@ -1,0 +1,4 @@
+fastapi
+mysql-connector-python
+uvicorn
+orjson

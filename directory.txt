@@ -1,0 +1,73 @@
+cftera/
+├─ assets/ # menyimpan assets (image, icon, svg, dll)
+│  ├─ background/
+│  └─ global/
+├─ backend/ # backend
+│  ├─ python/
+│  │  ├─ app/
+│  │  │  ├─ __init__.py
+│  │  │  ├─ generate_qr.py
+│  │  │  ├─ display_menu.py
+│  │  │  ├─ connect_to_db.py
+│  │  │  ├─ login_kasir.py
+│  │  │  ├─ statistik_kasir.py
+│  │  │  ├─ resource.py
+│  │  │  └─ transaction.py
+│  │  ├─ main.py # routing dengan fastapi
+│  │  └─ requirements.txt
+│  └─ database/
+│     ├─ product/
+│     ├─ qr/
+│     └─ mysql_config.json
+├─ routes/ # frontend interface
+│  ├─ client/ # dapat diakses pelanggan (public)
+│  │  ├─ main/ # halaman utama saat di get (pelanggan diarahkan untuk scan)
+│  │  │  ├─ index.html
+│  │  │  ├─ css/
+│  │  │  │  └─ style.css
+│  │  │  └─ javascript/
+│  │  │     └─ script.js
+│  │  ├─ order/ # menu pesan makanan (setelah pelanggan melakukan scan)
+│  │  │  ├─ index.html
+│  │  │  ├─ css/
+│  │  │  │  ├─ idle.css
+│  │  │  │  └─ payment.css
+│  │  │  └─ javascript/
+│  │  │     ├─ fetch.js
+│  │  │     ├─ style.js
+│  │  │     ├─ counter.js
+│  │  │     ├─ pesan.js
+│  │  │     └─ salt.js
+│  │  └─ invoice/ # setelah submit pesanan (menunggu response dari backend)
+│  |     ├─ index.html
+│  |     ├─ css/
+│  |     │  └─ style.css
+│  |     └─ javascript/
+│  |        └─ script.js
+│  └─ kasir/ # hanya dapat diakses kasir (private)
+│     ├─ login/ # halaman login kasir
+│     │  ├─ index.html
+│     │  ├─ css/
+│     │  │  └─ style.css
+│     │  └─ javascript/
+│     │     └─ script.js
+│     ├─ statistic/ # halaman statistik kasir (statistik penjualan oleh kasir)
+│     │  ├─ index.html
+│     │  ├─ css/
+│     │  │  └─ style.css
+│     │  └─ javascript/
+│     │     └─ script.js
+│     ├─ resource/ # halaman inventori restoran (edit ketersediaan menu)
+│     │  ├─ index.html
+│     │  ├─ css/
+│     │  │  └─ style.css
+│     │  └─ javascript/
+│     │     └─ script.js
+│     └─ dashboard/ # halaman dashboard pesanan
+│        ├─ index.html
+│        ├─ css/
+│        │  └─ style.css
+│        └─ javascript/
+│           └─ script.js
+├── .gitignore
+└── README.md

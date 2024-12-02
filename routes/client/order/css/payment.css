@@ -1,0 +1,228 @@
+/* Payment Container */
+
+.payment-container {
+    position: fixed;
+    top: 0;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    pointer-events: all;
+    overflow: hidden;
+}
+
+/* Search Button Changed */
+
+.back-button {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-radius: 1000px;
+    background-image: linear-gradient(to bottom, #9c1700, #df2100);
+    box-shadow: 4px 0px 10px #0000001a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0px 18px 0px 10px;
+    gap: 3px;
+}
+
+.back-button:active {
+    filter: brightness(110%);
+}
+
+.back-button span {
+    margin-bottom: 2px;
+    text-align: center;
+    font-weight: 100;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.back-button i {
+    color: white;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding-top: 1px;
+}
+
+.right-nomor-meja {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0px 18px 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #acacac;
+    box-sizing: border-box;
+    padding-bottom: 2px;
+}
+
+/* Main Container */
+
+.jumlah-masing-item {
+    position: absolute;
+    bottom: 2px;
+    right: 10px;
+    color: #a0a0a0;
+    font-size: 16px;
+    margin: 0;
+    line-height: 1;
+}
+
+/* Metode Pembayaran */
+
+.item-menu-pembayaran {
+    background-color: white;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    flex: 0 0 auto;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+}
+
+.item-menu-pembayaran span {
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.item-menu-pembayaran .icon-pembayaran {
+    left: 20px;
+    font-size: 16px;
+    color: #585858;
+}
+
+.item-menu-pembayaran .title-pembayaran {
+    left: 48px;
+    font-size: 13px;
+    color: #585858;
+    padding-bottom: 1px;
+}
+
+.dot-container {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    translate: 0 -50%;
+    width: 13px;
+    aspect-ratio: 1/1;
+    border: solid 1px black;
+    border-radius: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dot-container .inner-dot {
+    width: 76%;
+    aspect-ratio: 1/1;
+    border: none;
+    border-radius: 1000px;
+}
+
+.dot-container .inner-dot.active {
+    background-color: #585858;
+}
+
+.dot-container .inner-dot.inactive {
+    background-color: #ffffff;
+}
+
+/* Ringkasan Pembayaran */
+
+.container-ringkasan-pembayaran {
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    box-sizing: border-box;
+    padding: 10px 10px 40px 10px;
+}
+
+.row-ringkasan {
+    width: 100%;
+    height: 18px;
+    position: relative;
+}
+
+.row-ringkasan span {
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    margin: 0;
+    line-height: 1;
+    color: #3f3f3f;
+    font-size: 13px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.row-ringkasan .menu-name {
+    left: 0;
+    max-width: 200px;
+}
+
+.row-ringkasan .jumlah-item {
+    right: 80px;
+    max-width: 20px;
+}
+
+.row-ringkasan .price-masing-item {
+    right: 0;
+    max-width: 74px;
+}
+
+.row-ringkasan-total {
+    width: 100%;
+    height: 24px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.row-ringkasan-total span {
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    margin: 0;
+    line-height: 1;
+    color: #3f3f3f;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.row-ringkasan-total .text-total {
+    right: 100px;
+}
+
+.row-ringkasan-total .price-semua-item {
+    right: 0px;
+    max-width: 100px;
+}

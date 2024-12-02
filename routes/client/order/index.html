@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <!-- CDN Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+    <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"/>
+
+    <!-- Development -->
+    <link rel="icon" href="../assets/global/icon_cftera.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/idle.css">
+    <link rel="stylesheet" href="css/payment.css">
+
+    <!-- Deploy -->
+    <link rel="icon" href="/assets/global/icon_cftera.ico" type="image/x-icon">
+    <link rel="stylesheet" href="routes/client/order/css/global.css">
+    <link rel="stylesheet" href="routes/client/order/css/idle.css">
+    <link rel="stylesheet" href="routes/client/order/css/payment.css">
+</head>
+<body class="poppins">
+    <div class="header-container">
+        <div id="image-container" class="scroller-image-container"></div>
+        <div id="dot-container" class="scroller-dot-container"></div>
+        <div class="nomor-meja-container">
+            <span id="nomor-meja"></span>
+        </div>
+        <div id="search-button" class="search-bar-container">
+            <input type="text" id="searchInput" class="search-menu" placeholder="Mau cari menu apa ?" autocomplete="off" autocapitalize="off" autofocus="off" autofill="off" spellcheck="false">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+    </div>
+    <div id="main-container" class="main-container">
+
+        <!-- Idle Menu -->
+
+        <!-- Diskon -->
+        <!-- <div id="container-menu-diskon" class="container-menu-diskon">
+            <span class="title-menu-category">Diskon Spesial</span>
+            <div id="box-menu-diskon" class="scroller-menu-diskon">
+                <div class="produk-menu-diskon" id="RWN0000002">
+                    <div class="image-container">
+                        <img src="../assets/product/food/rawon.jpg">
+                    </div>
+                    <div class="info-container">
+                        <span class="menu-name">Rawon Daging Sapi</span>
+                        <span class="real-price"><del>Rp 40.000</del></span>
+                        <span class="price">Rp 32.000</span>
+                        <div class="add-button-container">
+                            <button type="button" class="add-button" onclick="addButton(this)">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Populer -->
+        <!-- <div id="container-menu-populer" class="container-menu-reguler">
+            <span class="title-menu-category">Paling Laris</span>
+            <div id="box-menu-populer" class="scroller-menu-reguler">
+                <div id="NSG0000001" class="produk-menu-reguler">
+                    <div class="image-container">
+                        <img src="../assets/product/food/nasi_goreng.jpg">
+                    </div>
+                    <div class="info-container">
+                        <span class="menu-name">Nasi Goreng Daging Sapi</span>
+                        <span class="real-price"><del></del></span>
+                        <span class="price">Rp 24.000</span>
+                        <div class="add-button-container">
+                            <button type="button" class="add-button" onclick="addButton(this)">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- All Menu -->
+        <!-- <div class="container-menu-reguler">
+            <span class="title-menu-category">Seafood</span>
+            <div class="scroller-menu-reguler">
+                <div id="KWT0000002" class="produk-menu-reguler">
+                    <div class="image-container">
+                        <img src="../assets/product/food/kwetiau.jpg">
+                    </div>
+                    <div class="info-container">
+                        <span class="menu-name">Kwetiau Goreng Telur Orak-Arik</span>
+                        <span class="real-price"><del>Rp 25.000</del></span>
+                        <span class="price">Rp 20.000</span>
+                        <div class="add-button-container">
+                            <button type="button" class="add-button" onclick="addButton(this)">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Overlay Payment -->
+
+        <!-- Menu yang Dipesan -->
+        <!-- <div id="container-menu-dipesan" class="container-menu-reguler">
+            <span class="title-menu-category">Menu yang Dipesan</span>
+            <div id="box-menu-dipesan" class="scroller-menu-reguler">
+                <div id="NSG0000001" class="produk-menu-reguler">
+                    <div class="image-container">
+                        <img src="../assets/product/food/nasi_goreng.jpg">
+                    </div>
+                    <div class="info-container">
+                        <span class="menu-name">Nasi Goreng Daging Sapi</span>
+                        <span class="real-price"><del>Rp 25.000</del></span>
+                        <span class="price">Rp 20.000</span>
+                        <span class="jumlah-masing-item">2x</span>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Metode Pembayaran -->
+        <!-- <div id="container-menu-metode" class="container-menu-reguler">
+            <span class="title-menu-category">Metode Pembayaran</span>
+            <div id="box-menu-metode" class="scroller-menu-reguler">
+                <div id="BYR01" class="item-menu-pembayaran">
+                    <span class="icon-pembayaran"><i class="fa-solid fa-money-bill-1-wave"></i></span>
+                    <span class="title-pembayaran">Cash</span>
+                    <div class="dot-container"><div class="inner-dot active"></div></div>
+                </div>
+                <div id="BYR02" class="item-menu-pembayaran">
+                    <span class="icon-pembayaran"><i class="fa-solid fa-wallet"></i></span>
+                    <span class="title-pembayaran">E-Wallet</span>
+                    <div class="dot-container"><div class="inner-dot inactive"></div></div>
+                </div>
+                <div id="BYR03" class="item-menu-pembayaran">
+                    <span class="icon-pembayaran"><i class="fa-solid fa-credit-card"></i></span>
+                    <span class="title-pembayaran">M-Banking</span>
+                    <div class="dot-container"><div class="inner-dot inactive"></div></div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Ringkasan Pembayaran -->
+        <!-- <div id="container-menu-ringkasan" class="container-menu-reguler">
+            <span class="title-menu-category">Ringkasan Pembayaran</span>
+            <div class="scroller-menu-reguler">
+                <div id="box-ringkasan" class="container-ringkasan-pembayaran">
+                    <div class="row-ringkasan">
+                        <span class="menu-name">Nasi Goreng Daging Sapi</span>
+                        <span class="jumlah-item">2x</span>
+                        <span class="price-masing-item">Rp 50.000</span>
+                    </div>
+                    <div class="row-ringkasan-total">
+                        <span class="text-total">Total</span>
+                        <span class="price-semua-item">Rp 100.000.000</span>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+    </div>
+
+    <div class="footer-container inactive">
+        <div id="submit-button" class="footer-button" onclick="showPesanan()">
+            <span class="total-item"></span>
+            <span class="total-price"></span>
+        </div>
+    </div>
+
+    <!-- Development -->
+    <script src="javascript/fetchs.js"></script>
+    <script src="javascript/style.js"></script>
+    <script src="javascript/counter.js"></script>
+    <script src="javascript/pesan.js"></script>
+    <script src="javascript/salt.js"></script>
+
+    <!-- Deploy -->
+    <script src="routes/client/order/javascript/fetchs.js"></script>
+    <script src="routes/client/order/javascript/style.js"></script>
+    <script src="routes/client/order/javascript/counter.js"></script>
+    <script src="routes/client/order/javascript/pesan.js"></script>
+    <script src="routes/client/order/javascript/salt.js"></script>
+</body>
+</html>

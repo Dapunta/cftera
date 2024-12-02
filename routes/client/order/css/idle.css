@@ -1,0 +1,510 @@
+.header-container,
+.main-container,
+.footer-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Header */
+
+.header-container {
+    height: 160px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    translate: -50% 0;
+    z-index: 1;
+}
+
+/* Background Image */
+
+.scroller-image-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.image-header-container {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: center;
+}
+
+.image-header-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dot Image */
+
+.scroller-dot-container {
+    position: absolute;
+    width: 60%;
+    height: 8px;
+    left: 50%;
+    bottom: 14%;
+    translate: -50% 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.dot-item {
+    height: 100%;
+    aspect-ratio: 1/1;
+    border: solid 1px #ffffff;
+    border-radius: 1000px;
+    transition: all 0.2s ease-out;
+}
+
+.dot-item.active {
+    aspect-ratio: 2.1;
+    background-color: #ffffff;
+}
+
+/* Nomor Meja */
+
+.nomor-meja-container {
+    position: absolute;
+    background-color: #ffffffcc;
+    width: 40px;
+    height: 26px;
+    right: 14px;
+    top: 14px;
+    border: none;
+    border-radius: 6px 6px 6px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 1px;
+    overflow: hidden;
+    font-weight: 600;
+    font-size: 100%;
+    color: #942525;
+}
+
+.nomor-meja-container.scrolled {
+    top: 0;
+    right: 0;
+    border-radius: 0px 0px 0px 6px;
+    height: 20px;
+    font-size: 80%;
+}
+
+/* Search Bar */
+
+.search-bar-container {
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px #0000001a;
+    width: calc(100% - 40px);
+    height: 40px;
+    left: 50%;
+    bottom: -15%;
+    translate: -50% 0;
+    border: none;
+    border-radius: 1000px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 4px 16px;
+    gap: 8px;
+    overflow: hidden;
+}
+
+.search-menu {
+    text-decoration: none;
+    outline: none;
+    border: none;
+    flex: 1;
+    font-size: 14px;
+    color: #535353;
+}
+
+.search-menu::placeholder {
+    font-size: 14px;
+    color: #888888bb;
+}
+
+.search-bar-container i {
+    width: 18px;
+    font-size: 16px;
+    color: #868686;
+}
+
+/* Main */
+
+.main-container {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    padding: 196px 0px 94px 0px;
+}
+
+.content-test {
+    background-color: #ffffff;
+    height: 80px;
+}
+
+.title-menu-category {
+    box-sizing: border-box;
+    padding-left: 24px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* Menu Diskon */
+
+.container-menu-diskon {
+    width: 100%;
+}
+
+.scroller-menu-diskon {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    box-sizing: border-box;
+    padding: 0px 16px 8px 16px;
+}
+
+.produk-menu-diskon {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 0 0 auto;
+    height: 80px;
+    width: 200px;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding: 7px;
+    gap: 5px;
+}
+
+/* Menu Diskon Image */
+
+.produk-menu-diskon .image-container {
+    height: 100%;
+    aspect-ratio: 1/1;
+    border: none;
+    border-radius: 6px;
+}
+
+.produk-menu-diskon .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border: none;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* Menu Diskon Info */
+
+.produk-menu-diskon .info-container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.produk-menu-diskon .info-container .menu-name {
+    color: #444444;
+    position: absolute;
+    top: 0;
+    line-height: 1.1;
+    font-weight: 500;
+    font-size: 13px;
+    width: 100%;
+    height: 29px;
+    overflow: hidden;
+}
+
+.produk-menu-diskon .info-container .real-price {
+    color: #868686;
+    position: absolute;
+    bottom: 16px;
+    line-height: 1.1;
+    font-weight: 500;
+    font-size: 9px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.produk-menu-diskon .info-container .price {
+    color: black;
+    position: absolute;
+    bottom: 0;
+    line-height: 1.1;
+    font-weight: 400;
+    font-size: 13px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.produk-menu-diskon .info-container .add-button-container {
+    position: absolute;
+    bottom: 1px;
+    right: 0;
+    background-color: #cccccc;
+    width: 39px;
+    height: 20px;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.produk-menu-diskon .info-container .add-button-container button {
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    font-size: 80%;
+    color: #ffffff;
+    width: 12px;
+}
+
+.produk-menu-diskon .info-container .add-button-container span {
+    height: 100%;
+    width: 40px;
+    background-color: white;
+    font-size: 16px;
+    color: rgb(187, 187, 187);
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Menu Reguler */
+
+.container-menu-reguler {
+    margin-top: 4px;
+    width: 100%;
+}
+
+.scroller-menu-reguler {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    box-sizing: border-box;
+    padding: 0px 16px 8px 16px;
+}
+
+.produk-menu-reguler {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 0 0 auto;
+    height: 84px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding: 8px;
+    gap: 6px;
+}
+
+/* Menu Reguler Image */
+
+.produk-menu-reguler .image-container {
+    height: 100%;
+    aspect-ratio: 14/9;
+    border: none;
+    border-radius: 6px;
+}
+
+.produk-menu-reguler .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border: none;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* Menu Reguler Info */
+
+.produk-menu-reguler .info-container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.produk-menu-reguler .info-container .menu-name {
+    color: #555555;
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 1.1;
+    font-weight: 500;
+    font-size: 15px;
+    width: 90%;
+    height: 34px;
+    overflow: hidden;
+}
+
+.produk-menu-reguler .info-container .real-price {
+    color: #868686;
+    position: absolute;
+    bottom: 16px;
+    line-height: 1.1;
+    font-weight: 500;
+    font-size: 11px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.produk-menu-reguler .info-container .price {
+    color: black;
+    position: absolute;
+    bottom: 0;
+    line-height: 1.1;
+    font-weight: 400;
+    font-size: 16px;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Add Button */
+
+.produk-menu-reguler .info-container .add-button-container {
+    position: absolute;
+    bottom: 2px;
+    right: 4px;
+    background-color: #cccccc;
+    width: 60px;
+    height: 24px;
+    border: none;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.produk-menu-reguler .info-container .add-button-container button {
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    font-size: 80%;
+    color: #ffffff;
+    flex: 1;
+}
+
+.produk-menu-reguler .info-container .add-button-container span {
+    height: 100%;
+    width: 22px;
+    background-color: white;
+    font-size: 16px;
+    color: rgb(187, 187, 187);
+    text-align: center;
+}
+
+/* Footer */
+
+.footer-container {
+    background-color: white;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-container.active {
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    translate: -50% 0;
+    opacity: 0;
+    opacity: 1;
+    pointer-events: all;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer-container.inactive {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    translate: -50% 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer-button {
+    position: absolute;
+    left: 50%;
+    top: -14px;
+    translate: -50% 0;
+    background-image: linear-gradient(to right, #8d1d09, #c21d00);
+    height: 44px;
+    width: calc(100% - 34px);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.footer-button:active {
+    filter: brightness(110%);
+}
+
+.footer-button .total-item {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    translate: 0 -50%;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.footer-button .total-price {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    translate: 0 -50%;
+    font-weight: 500;
+    font-size: 16px;
+}
