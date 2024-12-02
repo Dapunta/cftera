@@ -43,3 +43,33 @@
     ('STR0000002', 'Jus Stroberi', 20000, 0, 'jus', TRUE, FALSE, NULL),
     ('AGR0000003', 'Jus Anggur', 22000, 0, 'jus', TRUE, FALSE, NULL);
     ```
+
+### 2. Table Pesanan
+
+- Create Table `pesanan`
+    ```sql
+    CREATE TABLE pesanan (
+        id_pesanan VARCHAR(10) NOT NULL PRIMARY KEY,
+        time TIMESTAMP NOT NULL,
+        status VARCHAR(15) NOT NULL,
+        total_price DECIMAL(10, 2) NOT NULL,
+        meja VARCHAR(10) NOT NULL,
+        ip VARCHAR(10) DEFAULT NULL
+    );
+    ```
+
+### 3. Table Pesanan Menu
+
+- Create Table `pesanan_menu `
+    ```sql
+    CREATE TABLE pesanan_menu (
+        id_pesanan VARCHAR(10),
+        id_menu VARCHAR(10),
+        count INT NOT NULL DEFAULT 1,
+        PRIMARY KEY (id_pesanan, id_menu),
+        FOREIGN KEY (id_pesanan) REFERENCES pesanan(id_pesanan)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+        FOREIGN KEY (id_menu) REFERENCES menu(id_menu)
+        ON DELETE CASCADE ON UPDATE CASCADE
+    );
+    ```
