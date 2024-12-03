@@ -226,3 +226,131 @@
     right: 0px;
     max-width: 100px;
 }
+
+/* Loading Bar */
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinner-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    height: 46%;
+    aspect-ratio: 1/1;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.spinner {
+    border: 2px solid rgba(252, 252, 252, 0.3);
+    border-top: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    animation: spin 1s linear infinite;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+/* Failed Footer */
+
+.block-container.inactive {
+    display: none;
+}
+
+.block-container.active {
+    background-color: transparent;
+    backdrop-filter: blur(15px);
+    position: fixed;
+    top: 0;
+    left: 50%;
+    translate: -50% 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: all;
+}
+
+.failed-container {
+    background-color: #ffffff;
+    box-shadow: -4px 0px 8px rgba(0, 0, 0, 0.1);
+    height: 200px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 4;
+    border: none;
+    border-radius: 10px 10px 0px 0px;
+    pointer-events: all;
+}
+
+.failed-container.active {
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    translate: -50% 0;
+    opacity: 1;
+    pointer-events: all;
+    transition: all 0.3s ease-in-out;
+}
+
+.failed-container.inactive {
+    position: fixed;
+    bottom: -220px;
+    left: 50%;
+    translate: -50% 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.failed-container span {
+    position: absolute;
+    left: 50%;
+    translate: -50% 0;
+    text-align: center;
+    width: 300px;
+    overflow: hidden;
+}
+
+.failed-message {
+    font-size: 19px;
+    font-weight: 500;
+    top: 30px;
+    line-height: 1.3;
+}
+
+.resolve-message {
+    font-size: 14px;
+    font-weight: 300;
+    top: 64px;
+    line-height: 1.2;
+}
+
+.reload-button {
+    background-color: #909090;
+    color: white;
+    font-weight: 500;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    translate: -50% 0;
+    text-align: center;
+    overflow: hidden;
+    text-align: none;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    box-sizing: border-box;
+    width: 80px;
+    height: 30px;
+}

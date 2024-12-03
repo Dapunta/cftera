@@ -7,14 +7,17 @@ from urllib.parse import quote
 #--> All Apps
 from app.utils.connect_db import get_db_connection
 from app.client.get_menu import get_all_menu
+from app.client.validate_order import decrypted_data, add_order
 
-#--> Logging
+#--> Debugger
 import logging
-logger = logging.getLogger('uvicorn.error')
-logger.setLevel(logging.DEBUG)
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+# logger = logging.getLogger('uvicorn.error')
+# logger.setLevel(logging.DEBUG)
 
 #--> FastAPI
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.responses import JSONResponse
 from fastapi.responses import ORJSONResponse
@@ -50,6 +53,39 @@ async def get_order_page(meja:str=None) -> HTMLResponse:
             else: content = error()
         except Exception as e: content = error()
         return HTMLResponse(content=content)
+
+#--> [Client] Create Order
+@app.post("/create_order", response_class=JSONResponse)
+async def create_order(request:Request):
+    payload = {}
+    body = await request.json()
+    token = body.get('token',None)
+
+    if token:
+
+        #--> Decrypt Token
+        try: payload = decrypted_data(token)
+        except Exception as e: return(JSONResponse(content={"status":"failed", "message":f"Bad Token : {str(e)}", "data":{}}, status_code=400))
+
+        #--> Buat Pesanan
+        try:
+            buat_pesanan = add_order(payload)
+            if buat_pesanan['status'] == 'success':
+                return(JSONResponse(content={"status":"success", "message":"Token received", "data":{"id_pesanan":buat_pesanan['id_pesanan']}}, status_code=200))
+            else:
+                return(JSONResponse(content={"status":"failed", "message":"Spam", "data":{}}, status_code=400))
+        except Exception as e: return(JSONResponse(content={"status":"failed", "message":f"Bad Proccess : {str(e)}", "data":{}}, status_code=400))
+
+    else:
+        return(JSONResponse(content={"status":"failed", "message":"Token not provided", "data":{}}, status_code=400))
+
+#--> [Client] View Invoice
+@app.get("/invoice", response_class=HTMLResponse)
+async def get_invoice_page(id:str=None) -> HTMLResponse:
+    if not id or str(id).strip() == '': return RedirectResponse(url="/")
+    else:
+        logger.debug(id)
+        return HTMLResponse(content=id)
 
 if __name__ == "__main__":
     uvicorn.run(

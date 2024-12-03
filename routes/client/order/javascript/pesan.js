@@ -15,6 +15,7 @@ function showPesanan() {
     choosePaymentMethod()
     showRingkasanPembayaran()
     changeButtonBottom();
+    popUpFailed(false);
 }
 
 // Mengganti Tombol Search Atas
@@ -34,6 +35,7 @@ function backToMenu() {
     showStandart();
     backSearchButton();
     backSubmitButton();
+    popUpFailed(false);
 }
 
 function backSearchButton() {
@@ -220,11 +222,77 @@ function showRingkasanPembayaran() {
 // Submit Pesanan
 
 async function submitPesanan() {
+    loading('submit-button', true);
+
     const params = {
         "pesanan" : pesanan,
         "meja" : meja,
         "payment" : payment_method_choosen
     }
-    const encryptedString = await yoNdakTau(params);
-    console.log(encryptedString);
+
+    try {
+        
+        const encryptedString = await yoNdakTau(params);
+        const create_order_url = `${api}/create_order`;
+        const headers = {'Content-Type':'application/json'};
+        const data = {
+            'method'  : 'POST',
+            'mode'    : 'cors',
+            'headers' : headers,
+            'body'    : JSON.stringify({'token':encryptedString})
+        };
+
+        const req = await fetch(create_order_url, data);
+        const response = await req.json();
+
+        if (response.status == 'success') {
+            const url_redirect = `${api}/invoice?id=${response.data.id_pesanan}`;
+            console.log(url_redirect);
+            redirect(url_redirect);
+        }
+
+        else {
+            popUpFailed(true);
+        }
+
+    }
+
+    catch (e) {
+        console.log(e);
+        popUpFailed(true);
+    }
+}
+
+// Loading Spinner
+
+function loading(element_id, active) {
+    const loadingBox = document.getElementById(element_id);
+    if (active)  {
+        loadingBox.innerHTML = `<div id="loading-spinner" class="spinner-container"><div class="spinner"></div></div>`;
+        loadingBox.style.pointerEvents = 'none';
+    }
+    else {
+        loadingBox.innerHTML = ``;
+        loadingBox.style.pointerEvents = 'all';
+    }
+}
+
+// Redirect
+function redirect(url) {
+    window.location.href = url;
+}
+
+// Failed
+
+function popUpFailed(active) {
+    const block_container = document.getElementById('block-container');
+    block_container.className = active ? 'block-container active' : 'failed-container inactive';
+    const failed_container = document.getElementById('failed-container');
+    failed_container.className = active ? 'failed-container active' : 'failed-container inactive';
+}
+
+// Reload Window
+
+function reloadWindow() {
+    window.location.reload();
 }
