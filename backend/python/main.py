@@ -8,6 +8,7 @@ from urllib.parse import quote
 from app.utils.connect_db import get_db_connection
 from app.client.get_menu import get_all_menu
 from app.client.validate_order import decrypted_data, add_order
+from app.client.get_invoice import get_invoice
 
 #--> Debugger
 import logging
@@ -35,14 +36,7 @@ def error():
     text = 'Maaf Terjadi Kesalahan'
     return(text)
 
-#--> [Client] Fetch All Menu
-@app.get("/get_menu", response_model=List[Dict])
-async def get_menu():
-    try: result = get_all_menu()
-    except Exception as e: result = []
-    return JSONResponse(content=result)
-
-#--> [Client] Order Page
+#--> [Client] Display Order Page
 @app.get("/order", response_class=HTMLResponse)
 async def get_order_page(meja:str=None) -> HTMLResponse:  
     if not meja or str(meja).strip() == '': return RedirectResponse(url="/")
@@ -53,6 +47,13 @@ async def get_order_page(meja:str=None) -> HTMLResponse:
             else: content = error()
         except Exception as e: content = error()
         return HTMLResponse(content=content)
+
+#--> [Client] Fetch All Menu
+@app.get("/get_menu", response_model=List[Dict])
+async def get_menu():
+    try: result = get_all_menu()
+    except Exception as e: result = []
+    return JSONResponse(content=result)
 
 #--> [Client] Create Order
 @app.post("/create_order", response_class=JSONResponse)
@@ -79,13 +80,28 @@ async def create_order(request:Request):
     else:
         return(JSONResponse(content={"status":"failed", "message":"Token not provided", "data":{}}, status_code=400))
 
-#--> [Client] View Invoice
+#--> [Client] Display Invoice Page
 @app.get("/invoice", response_class=HTMLResponse)
 async def get_invoice_page(id:str=None) -> HTMLResponse:
     if not id or str(id).strip() == '': return RedirectResponse(url="/")
     else:
-        logger.debug(id)
-        return HTMLResponse(content=id)
+        try:
+            order_file_path = Path("routes/client/invoice/index.html")
+            if order_file_path.exists(): content = order_file_path.open().read()
+            else: content = error()
+        except Exception as e: content = error()
+        return HTMLResponse(content=content)
+
+#--> [Client] Fetch Invoice Data
+@app.get("/get_invoice")
+async def fetch_invoice(id:str=None):
+    if not id or str(id).strip() == '':
+        return(JSONResponse(content={"status":"failed", "message":"Invoice not provided", "data":{}}, status_code=400))
+    else:
+        try:
+            response = get_invoice(id)
+            return(JSONResponse(content=response, status_code=200))
+        except Exception as e: return(JSONResponse(content={"status":"failed", "message":f"Bad Proccess : {str(e)}", "data":{}}, status_code=400))
 
 if __name__ == "__main__":
     uvicorn.run(

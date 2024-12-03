@@ -66,6 +66,13 @@ def spam_detection(cursor, ip) -> bool:
     count = result.get('COUNT(*)',0)
     return(True if int(count) >= batas else False)
 
+#--> Mengecek Apakah id_pesanan Sudah Ada
+def check_order_exists(cursor, id_pesanan) -> bool:
+    query = "SELECT id_pesanan FROM pesanan WHERE id_pesanan = %s"
+    cursor.execute(query, (id_pesanan,))
+    result = cursor.fetchone()
+    return result is not None
+
 #--> Menambah Data Pesanan
 def add_order(data):
 
@@ -85,14 +92,15 @@ def add_order(data):
     
     #--> Anti Spam
     is_spam = spam_detection(cursor, ip)
-    if not is_spam and int(total_price) != 0:
+    is_exists = check_order_exists(cursor, id_pesanan)
+    if not is_spam and not is_exists and int(total_price) != 0:
 
         #--> Tambahkan Data Ke Table 'pesanan'
         query_pesanan = """
-            INSERT INTO pesanan (id_pesanan, time, status, total_price, meja, ip)
-            VALUES (%s, %s, %s, %s, %s, %s)
+            INSERT INTO pesanan (id_pesanan, time, status, total_price, meja, ip, payment)
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
         """
-        cursor.execute(query_pesanan, (id_pesanan, timestamp, status, total_price, meja, ip))
+        cursor.execute(query_pesanan, (id_pesanan, timestamp, status, total_price, meja, ip, payment))
 
         #--> Tambahkan Data Ke Table 'pesanan_menu'
         for item in pesanan:
