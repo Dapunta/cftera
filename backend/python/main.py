@@ -11,6 +11,8 @@ from app.client.get_menu import get_all_menu
 from app.client.validate_order import decrypted_data, add_order
 from app.client.get_invoice import get_invoice
 from app.admin.edit_menu import edit_menu
+from app.admin.fetch_order import get_all_order
+from app.admin.edit_order import edit_status_by_id, delete_order_by_id
 
 #--> Debugger
 import logging
@@ -121,6 +123,32 @@ async def route_edit_menu(request:Request):
     data = await request.json()
     try: response = edit_menu(data)
     except Exception as e: response = {'status':'failed', 'data':{}}
+    return JSONResponse(content=response, status_code=200)
+
+#--> [Kasir] Fetch Order
+@app.get("/get_order", response_model=List[Dict])
+async def get_order():
+    try: result = get_all_order()
+    except Exception as e: result = []
+    return JSONResponse(content=result)
+
+#--> [Kasir] Edit Status Order
+@app.post("/edit_status_order", response_class=JSONResponse)
+async def route_edit_order(request:Request):
+    data = await request.json()
+    try: response = edit_status_by_id(data['id_pesanan'], data['status'])
+    except Exception as e: response = {'status':'failed', 'data':{}}
+    return JSONResponse(content=response, status_code=200)
+
+#--> [Kasir] Delete Order
+@app.post("/delete_order", response_class=JSONResponse)
+async def route_delete_order(request:Request):
+    data = await request.json()
+    try:
+        deleted = delete_order_by_id(data['id_pesanan'])
+        if deleted: response = {'status':'success'}
+        else: response = {'status':'failed'}
+    except Exception as e: response = {'status':'failed'}
     return JSONResponse(content=response, status_code=200)
 
 if __name__ == "__main__":
