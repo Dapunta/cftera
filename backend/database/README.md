@@ -54,7 +54,8 @@
         status VARCHAR(15) NOT NULL,
         total_price DECIMAL(10, 2) NOT NULL,
         meja VARCHAR(10) NOT NULL,
-        ip VARCHAR(10) DEFAULT NULL
+        ip VARCHAR(10) DEFAULT NULL,
+        payment VARCHAR(15) NOT NULL
     );
     ```
 

@@ -3,12 +3,14 @@ import os, json, uvicorn
 from typing import List, Dict
 from pathlib import Path
 from urllib.parse import quote
+from pydantic import BaseModel
 
 #--> All Apps
 from app.utils.connect_db import get_db_connection
 from app.client.get_menu import get_all_menu
 from app.client.validate_order import decrypted_data, add_order
 from app.client.get_invoice import get_invoice
+from app.admin.edit_menu import edit_menu
 
 #--> Debugger
 import logging
@@ -102,6 +104,24 @@ async def fetch_invoice(id:str=None):
             response = get_invoice(id)
             return(JSONResponse(content=response, status_code=200))
         except Exception as e: return(JSONResponse(content={"status":"failed", "message":f"Bad Proccess : {str(e)}", "data":{}}, status_code=400))
+
+#--> [Kasir] Display Dashboard Page
+@app.get("/dashboard", response_class=HTMLResponse)
+async def get_dashboard_page() -> HTMLResponse:  
+    try:
+        dashboard_file_path = Path("routes/kasir/dashboard/index.html")
+        if dashboard_file_path.exists(): content = dashboard_file_path.open().read()
+        else: content = error()
+    except Exception as e: content = error()
+    return HTMLResponse(content=content)
+
+#--> [Kasir] Edit Menu
+@app.post("/edit_menu", response_class=JSONResponse)
+async def route_edit_menu(request:Request):
+    data = await request.json()
+    try: response = edit_menu(data)
+    except Exception as e: response = {'status':'failed', 'data':{}}
+    return JSONResponse(content=response, status_code=200)
 
 if __name__ == "__main__":
     uvicorn.run(
