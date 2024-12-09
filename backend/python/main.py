@@ -184,7 +184,7 @@ async def get_order(request:Request):
             result = get_all_order()
         else: result = []
     except Exception as e: result = []
-    return JSONResponse(content=result)
+    return JSONResponse(content=result, status_code=200)
 
 #--> [Kasir] Edit Status Order
 @app.post("/edit_status_order", response_class=JSONResponse)

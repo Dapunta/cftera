@@ -89,6 +89,13 @@
     );
     ```
 
+- Insert Kasir to Table `kasir`
+    ```sql
+    INSERT INTO kasir (id_kasir, name, username, password, phone, status) VALUES 
+    ('DPT0A0A0A1', 'Dapunta Ratya', 'dapunta', 'akusayangkamu', '082227340836', 'Cashier'),
+    ('AMR0A0A0A1', 'Ammar Ghozy', 'ammar', 'ammar123', '082212344321', 'Cashier');
+    ```
+
 ### 5. Table Kasir Pesanan
 
 - Create Table `kasir_pesanan`
@@ -103,11 +110,4 @@
         FOREIGN KEY (id_pesanan) REFERENCES pesanan(id_pesanan)
         ON DELETE CASCADE ON UPDATE CASCADE
     );
-    ```
-
-- Insert All Menu to Table `kasir_pesanan`
-    ```sql
-    INSERT INTO kasir (id_kasir, name, username, password, phone, status) VALUES 
-    ('DPT0A0A0A1', 'Dapunta Ratya', 'dapunta', 'akusayangkamu', '082227340836', 'Cashier'),
-    ('AMR0A0A0A1', 'Ammar Ghozy', 'ammar', 'ammar123', '082212344321', 'Cashier');
     ```
