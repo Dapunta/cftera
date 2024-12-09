@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Resto Nusantara</title>
+
+    <!-- CDN Style -->
+    <link rel="stylesheet" type='text/css' href="/assets/font/poppins.css">
+    <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <!-- Development -->
+    <!-- <link rel="icon" href="../../../assets/global/icon_cftera.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/login.css"> -->
+
+    <!-- Deployment -->
+    <link rel="icon" href="assets/global/icon_cftera.ico" type="image/x-icon">
+    <link rel="stylesheet" href="routes/kasir/login/css/login.css">
+
+</head>
+<body class="poppins">
+
+    <!-- Development -->
+    <!-- <img class="background-image" src="../../../assets/background/banner.jpg"> -->
+    
+    <!-- Deployment -->
+    <img class="background-image" src="assets/background/banner.jpg">
+    
+    <div class="login-container">
+        <div class="login-header-container">
+            <span class="title">RESTO NUSANTARA</span>
+            <span class="subtitle">By Cftera</span>
+        </div>
+        <div class="login-form-container">
+            <span class="label-input">Username</span>
+            <input id="username" class="username" type="text" name="username" placeholder="adminganteng" autocomplete="off" autocapitalize="off" autofocus="off" autofill="off" spellcheck="false" required>
+            <span class="label-input">Password</span>
+            <div class="form-password">
+                <input id="password" class="password" type="password" name="password" placeholder="••••••••••" autocomplete="off" autocapitalize="off" autofocus="off" autofill="off" spellcheck="false" required>
+                <i id="eye-password" class="fa-solid fa-eye" onclick="changeEyePassword(this)"></i>
+            </div>
+            <button id="submit-login-button" type="button" class="submit-button" onclick="readInput()">Login</button>
+        </div>
+        <div id="response-login" class="login-result-container"></div>
+    </div>
+
+    <!-- Development -->
+    <!-- <script src="javascript/login.js"></script> -->
+
+    <!-- Deployment -->
+    <script src="routes/kasir/login/javascript/login.js"></script>
+
+</body>
+</html>

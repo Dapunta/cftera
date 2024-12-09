@@ -134,7 +134,7 @@
 .container-navigation-profile .container-navigation-profile-card span,
 .container-navigation-profile-logout,
 .container-navigation-profile-setting,
-.profile-card-text span {
+.profile-card-text .profile-data span {
     box-sizing: border-box;
     margin: 0;
 }
@@ -160,7 +160,7 @@
     font-size: 40px;
 }
 
-.container-navigation-profile-card .profile-card-text {
+.container-navigation-profile-card .profile-card-text .profile-data {
     width: 100%;
     height: 100%;
     display: flex;
@@ -174,16 +174,21 @@
     line-height: 1.1;
 }
 
-.profile-card-text span {
+.profile-card-text .profile-data {
+    width: 100%;
+    height: 100%;
+}
+
+.profile-card-text .profile-data span {
     white-space: nowrap;
 }
 
-.profile-card-text .name {
+.profile-card-text .profile-data .name {
     font-weight: 500;
     font-size: 18px;
 }
 
-.profile-card-text .task {
+.profile-card-text .profile-data .task {
     font-weight: 300;
     font-size: 12px;
 }

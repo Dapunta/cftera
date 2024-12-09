@@ -12,7 +12,7 @@ const data_child_page = {
 };
 
 async function startNav() {
-    const id_awal = 'nav_2';
+    const id_awal = 'nav_1';
     const element_nav_awal = document.getElementById(id_awal);
     await changeNav(element_nav_awal);
 }
@@ -52,10 +52,43 @@ async function reloadScript(id) {
     }
 }
 
+// Load Profile
+
+let session_var = 'session';
+
+async function loadSession() {
+    const session_data = localStorage.getItem(session_var);
+    return session_data ? JSON.parse(session_data) : {'id_kasir':0, 'name':null, 'status':null, 'token':null};
+}
+
+async function loadProfile() {
+    const data = await loadSession();
+    const profile_container = document.getElementById('profile-card');
+    profile_container.innerHTML = `
+        <div id="${data.id_kasir}" class="profile-data">
+            <span id="profile-admin-name" class="name">${data.name}</span>
+            <span id="profile-admin-status" class="task">${data.status}</span>
+        </div>`;
+}
+
+// Logout
+
+function logout() {
+    localStorage.removeItem(session_var);
+    const cok = document.cookie.split(";");
+    for (let cookie of cok) {
+        const eqPos = cookie.indexOf("=");
+        const name = eqPos > -1 ? cookie.substring(0, eqPos).trim() : cookie.trim();
+        document.cookie = `${name}=; path=/; SameSite=Strict`;
+    }
+    window.location.href = `${api}/login`;
+}
+
 // Initiator
 
 async function main() {
     await startNav();
+    await loadProfile();
 }
 
 main();

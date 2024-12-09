@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Dashboard - Resto Nusantara</title>
 
     <!-- CDN Style -->
     <link rel="stylesheet" type='text/css' href="/assets/font/poppins.css">
@@ -49,16 +49,13 @@
         <div class="container-navigation-profile">
             <div class="container-navigation-profile-card">
                 <span class="icon material-symbols-outlined">account_circle</span>
-                <div class="profile-card-text">
-                    <span class="name">Dapunta Ratya</span>
-                    <span class="task">Cashier</span>
-                </div>
+                <div id="profile-card" class="profile-card-text"></div>
             </div>
             <div class="container-navigation-profile-setting">
                 <span class="icon material-symbols-outlined">settings</span>
                 <span class="text">Setting</span>
             </div>
-            <div class="container-navigation-profile-logout">
+            <div class="container-navigation-profile-logout" onclick="logout()">
                 <span class="icon material-symbols-outlined">logout</span>
                 <span class="text">Log Out</span>
             </div>

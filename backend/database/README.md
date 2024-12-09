@@ -74,3 +74,40 @@
         ON DELETE CASCADE ON UPDATE CASCADE
     );
     ```
+
+### 4. Table Kasir
+
+- Create Table `kasir`
+    ```sql
+    CREATE TABLE kasir (
+        id_kasir VARCHAR(10) NOT NULL PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        username VARCHAR(50) NOT NULL UNIQUE,
+        password VARCHAR(255) NOT NULL,
+        phone VARCHAR(20) NOT NULL,
+        status VARCHAR(20) NOT NULL
+    );
+    ```
+
+### 5. Table Kasir Pesanan
+
+- Create Table `kasir_pesanan`
+    ```sql
+    CREATE TABLE kasir_pesanan (
+        id_kasir VARCHAR(10),
+        id_pesanan VARCHAR(10),
+        time BIGINT NOT NULL,
+        PRIMARY KEY (id_kasir, id_pesanan),
+        FOREIGN KEY (id_kasir) REFERENCES kasir(id_kasir)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+        FOREIGN KEY (id_pesanan) REFERENCES pesanan(id_pesanan)
+        ON DELETE CASCADE ON UPDATE CASCADE
+    );
+    ```
+
+- Insert All Menu to Table `kasir_pesanan`
+    ```sql
+    INSERT INTO kasir (id_kasir, name, username, password, phone, status) VALUES 
+    ('DPT0A0A0A1', 'Dapunta Ratya', 'dapunta', 'akusayangkamu', '082227340836', 'Cashier'),
+    ('AMR0A0A0A1', 'Ammar Ghozy', 'ammar', 'ammar123', '082212344321', 'Cashier');
+    ```

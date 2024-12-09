@@ -1,0 +1,253 @@
+/* Default Global */
+
+body {
+    background-color: #000000;
+    margin: 0;
+    overflow: hidden;
+    width: 100dvw;
+    height: 100dvh;
+    position: relative;
+    cursor: default;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.poppins {
+    font-family: "Poppins", sans-serif;
+}
+
+/* Background Image */
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* Center Container */
+
+.login-container {
+    background-color: #ffffffe8;
+    backdrop-filter: blur(6px);
+    box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 360px;
+    aspect-ratio: 3/4;
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 36px;
+    overflow: hidden;
+}
+
+.login-header-container,
+.login-form-container,
+.login-result-container {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Login Header */
+
+.login-header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 20px 0px 20px 0px;
+    overflow: hidden;
+}
+
+.login-header-container span {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    line-height: 1;
+    overflow: hidden;
+}
+
+.login-header-container .title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #ec0000;
+}
+
+.login-header-container .subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    color: #ad0202;
+}
+
+/* Login Form */
+
+.login-form-container {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    position: relative;
+}
+
+.login-form-container span {
+    width: 100%;
+    text-align: start;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding: 0px 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #505050;
+}
+
+.login-form-container input {
+    width: 100%;
+    height: 32px;
+    box-sizing: border-box;
+    border: solid 1px #505050;
+    border-radius: 7px;
+    margin-bottom: 6px;
+    padding: 1px 10px 0px 10px;
+    outline: none;
+    text-decoration: none;
+    cursor: text;
+    overflow: hidden;
+    color: #3f3f3f;
+    background-color: transparent;
+}
+
+.login-form-container .form-password {
+    width: 100%;
+    height: 32px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-password input {
+    padding: 1px 34px 0px 10px;
+    overflow: hidden;
+    color: #3f3f3f;
+}
+
+.form-password i {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    translate: 0 -50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    aspect-ratio: 1/1;
+    box-sizing: border-box;
+    padding-top: 1px;
+    font-size: 13px;
+    cursor: pointer;
+    overflow: hidden;
+    color: #505050;
+}
+
+input::placeholder {
+    color: #505050a8;
+}
+
+.submit-button {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 7px;
+    background-color: #e40000;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 20px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.submit-button:hover {
+    background-color: #cf0000;
+}
+
+.submit-button:active {
+    background-color: #b10000;
+}
+
+/* Login Result */
+
+.login-result-container {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.login-result-container span {
+    color: #505050;
+    width: 100%;
+    height: auto;
+    max-height: 86px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 400;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0px 40px;
+}
+
+/* Loading Bar */
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinner-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    height: 46%;
+    aspect-ratio: 1/1;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.spinner {
+    border: 2px solid rgba(252, 252, 252, 0.3);
+    border-top: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    animation: spin 1s linear infinite;
+    box-sizing: border-box;
+    pointer-events: none;
+}
