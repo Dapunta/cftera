@@ -2,5 +2,5 @@ fastapi
 mysql-connector-python
 uvicorn
 orjson
-jwt
+PyJwt
 cryptography
